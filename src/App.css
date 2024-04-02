@@ -22,6 +22,10 @@
   font-size: calc(10px + 2vmin);
 }
 
+.logo {
+  color: #fff;
+}
+
 .App-link {
   color: rgb(112, 76, 182);
 }

@@ -8,8 +8,8 @@ export default function MainPage() {
   return (
     <Layout>
       <HeaderComponent />
-      <ContentComponent />
-      <FooterComponent />
+      {/* <ContentComponent />
+      <FooterComponent /> */}
     </Layout>
   )
 }

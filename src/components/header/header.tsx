@@ -1,12 +1,7 @@
-import React from 'react';
 import {Layout, Menu} from 'antd';
 
 const {Header} = Layout;
 
-const items = new Array(3).fill(null).map((_, index) => ({
-  key: String(index + 1),
-  label: `nav ${index + 1}`,
-}));
 
 const HeaderComponent: React.FC = () => {
   return (
@@ -18,16 +13,20 @@ const HeaderComponent: React.FC = () => {
           width: '100%',
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          // backgroundColor: 'white',
         }}
       >
-        <div className="demo-logo" />
+        <div className="logo">LOGO</div>
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={items}
-          style={{ flex: 1, minWidth: 0 }}
-        />
+          style={{ flex: 1, maxWidth: '264px', justifyContent: 'flex-end' }}
+        >
+          <Menu.Item key="1">Заказы</Menu.Item>
+          <Menu.Item key="2">Корзина</Menu.Item>
+          <Menu.Item key="3">Профиль</Menu.Item>
+        </Menu>
       </Header>
   );
 };
