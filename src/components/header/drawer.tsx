@@ -19,9 +19,9 @@ const DrawerUser: React.FC = () => {
 
   return (
     <>
-      <Menu.Item className='btn' type="primary" onClick={showDrawer}>
+      <Button className='btn' type="primary" onClick={showDrawer}>
         {user.name}
-      </Menu.Item>
+      </Button>
       <Drawer title="Basic Drawer" onClose={onClose} open={open}>
         <p>Some contents...</p>
         <p>Some contents...</p>

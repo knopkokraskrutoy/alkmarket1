@@ -1,10 +1,10 @@
-import { ShoppingCartOutlined, UnorderedListOutlined } from '@ant-design/icons';
-import {Button, Input, Layout, Menu, Badge, Avatar} from 'antd';
-import Search from 'antd/es/input/Search';
-import DrawerUser from './drawer';
+import { ShoppingCartOutlined, UnorderedListOutlined } from "@ant-design/icons"
+import { Button, Input, Layout, Menu, Badge, Avatar } from "antd"
+import Search from "antd/es/input/Search"
+import DrawerUser from "./drawer"
+import { Link } from "react-router-dom"
 
-const {Header} = Layout;
-
+const { Header } = Layout
 
 const HeaderComponent: React.FC = () => {
   return (
@@ -35,23 +35,22 @@ const HeaderComponent: React.FC = () => {
 
         <Menu mode="vertical" theme="dark" items={items} />
         */}
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        style={{ flex: 1, maxWidth: "40%", justifyContent: "flex-end" }}
-      >
-        <Menu.Item key="1">Заказы</Menu.Item>
-        <Menu.Item key="2">
-          <a href="#">
-            <Badge size='small' count={5}>
-              <ShoppingCartOutlined style={{color: '#fff', fontSize: '32px'}} />
-            </Badge>
-          </a>
-        </Menu.Item>
-        <Menu.Item key="3">
+      <div className="Menu" style={{ display: "flex", flexDirection: "row", gap: "16px", alignItems: "center", justifyContent: "center" }}>
+      <Link to={'/orders'}>
+          Заказы
+        </Link>
+        <Link
+          to={"#"}
+          style={{display: "flex"}}
+        >
+          <Badge size="small" count={5}>
+            <ShoppingCartOutlined style={{ color: "#fff", fontSize: "32px" }} />
+          </Badge>
+        </Link>
+        <Link to={'/user'}>
           <DrawerUser />
-        </Menu.Item>
-      </Menu>
+        </Link>
+      </div>
       <div
         className="header-search"
         style={{
@@ -68,6 +67,6 @@ const HeaderComponent: React.FC = () => {
       </div>
     </Header>
   )
-};
+}
 
-export default HeaderComponent;
+export default HeaderComponent
