@@ -1,5 +1,5 @@
-import { UnorderedListOutlined } from '@ant-design/icons';
-import {Button, Input, Layout, Menu} from 'antd';
+import { ShoppingCartOutlined, UnorderedListOutlined } from '@ant-design/icons';
+import {Button, Input, Layout, Menu, Badge, Avatar} from 'antd';
 import Search from 'antd/es/input/Search';
 import DrawerUser from './drawer';
 
@@ -41,7 +41,13 @@ const HeaderComponent: React.FC = () => {
         style={{ flex: 1, maxWidth: "40%", justifyContent: "flex-end" }}
       >
         <Menu.Item key="1">Заказы</Menu.Item>
-        <Menu.Item key="2">Корзина</Menu.Item>
+        <Menu.Item key="2">
+          <a href="#">
+            <Badge size='small' count={5}>
+              <ShoppingCartOutlined style={{color: '#fff', fontSize: '32px'}} />
+            </Badge>
+          </a>
+        </Menu.Item>
         <Menu.Item key="3">
           <DrawerUser />
         </Menu.Item>
