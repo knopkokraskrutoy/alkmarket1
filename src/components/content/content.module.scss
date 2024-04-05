@@ -1,0 +1,16 @@
+// ProductCard //
+
+.card__price {
+  color: gray;
+  text-decoration: none;
+}
+
+// ProductCardList //
+
+.card__list {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

@@ -1,3 +1,14 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logo {
   color: #fff;
 }
@@ -24,3 +35,48 @@
   flex-direction: row;
   gap: 16px;
 }
+
+// Basket && Order//
+
+.basket_order__link {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.basket_order__badge {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+}
+
+.basket_order__img {
+  color: #fff;
+  font-size: 32px;
+  margin-left: 8px;
+}
+
+.basket_order__txt {
+  color: #fff;
+  margin: 0;
+}
+
+// DropDownUser //
+
+.dropdown__link {
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dropdown__avatar {
+  background-color: #87d068;
+}
+
+.dropdown__exit {
+  color: red;
+}
+

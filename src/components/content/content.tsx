@@ -1,7 +1,7 @@
 import { Breadcrumb, Layout, theme } from "antd"
-import ProductCard from "../customElements/Products/ProductCard"
+import ProductCardList from "./Products/ProductCardList"
 
-const {Content} = Layout
+const { Content } = Layout
 
 const ContentComponent: React.FC = () => {
   const {
@@ -23,16 +23,7 @@ const ContentComponent: React.FC = () => {
           borderRadius: borderRadiusLG,
         }}
       >
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCardList/>
       </div>
     </Content>
   )

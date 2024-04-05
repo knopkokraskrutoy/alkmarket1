@@ -1,8 +1,9 @@
 import { Card, Button } from "antd"
+import cls from "../content.module.scss"
 
 const { Meta } = Card
 
-const ProductCard: React.FC = () => (
+const ProductCard: React.FC = props => (
   <Card
     hoverable
     style={{ width: 240 }}
@@ -13,8 +14,8 @@ const ProductCard: React.FC = () => (
       />
     }
   >
-    <Meta title="Name" />
-    <h3 style={{ color: "gray", textDecoration: 'none' }}>price ₽</h3>
+    <Meta title={props.card.name} />
+    <h3 className={cls.card__price}>{props.card.price}</h3>
     <Button block>В корзину</Button>
   </Card>
 )
