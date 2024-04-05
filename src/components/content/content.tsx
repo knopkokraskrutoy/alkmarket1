@@ -1,4 +1,3 @@
-import React from "react"
 import { Breadcrumb, Layout, theme } from "antd"
 import ProductCard from "../customElements/Products/ProductCard"
 
@@ -24,7 +23,16 @@ const ContentComponent: React.FC = () => {
           borderRadius: borderRadiusLG,
         }}
       >
-        <ProductCard></ProductCard>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </div>
     </Content>
   )

@@ -1,4 +1,3 @@
-import React from "react"
 import { Card, Button } from "antd"
 
 const { Meta } = Card
@@ -14,9 +13,9 @@ const ProductCard: React.FC = () => (
       />
     }
   >
-    <Meta title="price ₽" />
-    <h3 style={{ color: "#2e2e2e", textDecoration: 'none' }}>Name</h3>
-    <Button>В корзину</Button>
+    <Meta title="Name" />
+    <h3 style={{ color: "gray", textDecoration: 'none' }}>price ₽</h3>
+    <Button block>В корзину</Button>
   </Card>
 )
 

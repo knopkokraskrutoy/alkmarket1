@@ -1,7 +1,7 @@
-import React, { useState } from "react"
 import { Button, Drawer, Menu } from "antd"
-import './style.css'
+
 import { UnorderedListOutlined } from "@ant-design/icons"
+import { useState } from "react"
 
 const DrawerCatalog: React.FC = () => {
   const [open, setOpen] = useState(false)
