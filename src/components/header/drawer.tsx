@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import { Button, Drawer, Menu } from "antd"
 import './style.css'
+import { UnorderedListOutlined } from "@ant-design/icons"
 
-const DrawerUser: React.FC = () => {
+const DrawerCatalog: React.FC = () => {
   const [open, setOpen] = useState(false)
 
   const showDrawer = () => {
@@ -14,13 +15,14 @@ const DrawerUser: React.FC = () => {
   }
 
   const user = {
-    name: "Алексей"
+    name: "Алексей",
   }
 
   return (
     <>
-      <Button className='btn' type="primary" onClick={showDrawer}>
-        {user.name}
+      <Button onClick={showDrawer}>
+        <UnorderedListOutlined />
+        Каталог
       </Button>
       <Drawer title="Basic Drawer" onClose={onClose} open={open}>
         <p>Some contents...</p>
@@ -31,4 +33,4 @@ const DrawerUser: React.FC = () => {
   )
 }
 
-export default DrawerUser
+export default DrawerCatalog

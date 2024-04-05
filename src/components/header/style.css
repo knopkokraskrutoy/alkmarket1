@@ -1,6 +1,7 @@
 .btn {
   background: #00152900;
   box-shadow: none;
+  color: #cfcfcf;
 }
 
 .btn:hover {

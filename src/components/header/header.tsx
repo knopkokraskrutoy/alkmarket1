@@ -2,7 +2,11 @@ import { ShoppingCartOutlined, UnorderedListOutlined } from "@ant-design/icons"
 import { Button, Input, Layout, Menu, Badge, Avatar } from "antd"
 import Search from "antd/es/input/Search"
 import DrawerUser from "./drawer"
+import DropdownUser from "../user/dropDownUser"
 import { Link } from "react-router-dom"
+import Basket from "./basket"
+import Order from "./order"
+import DrawerCatalog from "./drawer"
 
 const { Header } = Layout
 
@@ -14,6 +18,7 @@ const HeaderComponent: React.FC = () => {
         top: 0,
         zIndex: 1,
         width: "100%",
+        height: "72px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -35,20 +40,20 @@ const HeaderComponent: React.FC = () => {
 
         <Menu mode="vertical" theme="dark" items={items} />
         */}
-      <div className="Menu" style={{ display: "flex", flexDirection: "row", gap: "16px", alignItems: "center", justifyContent: "center" }}>
-      <Link to={'/orders'}>
-          Заказы
-        </Link>
-        <Link
-          to={"#"}
-          style={{display: "flex"}}
-        >
-          <Badge size="small" count={5}>
-            <ShoppingCartOutlined style={{ color: "#fff", fontSize: "32px" }} />
-          </Badge>
-        </Link>
-        <Link to={'/user'}>
-          <DrawerUser />
+      <div
+        className="Menu"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "16px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Order />
+        <Basket></Basket>
+        <Link to={"/user"}>
+          <DropdownUser />
         </Link>
       </div>
       <div
@@ -59,10 +64,7 @@ const HeaderComponent: React.FC = () => {
           gap: "8px",
         }}
       >
-        <Button>
-          <UnorderedListOutlined />
-          Каталог
-        </Button>
+        <DrawerCatalog />
         <Search placeholder="Поиск" enterButton />
       </div>
     </Header>
