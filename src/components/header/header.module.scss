@@ -80,3 +80,17 @@
   color: red;
 }
 
+// Drawer //
+
+.drawer__btn {
+  color: #fff;
+  height: 150px;
+  margin-top: 10px;
+  background-image: url(./elements/drawerImg/wine.jpg);
+  background-size: 350px;
+}
+
+.drawer__btn:hover {
+  background-color: #0000002f;
+}
+
