@@ -51,7 +51,7 @@ const FilterSlider: React.FC = () => {
         range
         min={1}
         max={1000}
-        step={1}
+        step={10}
         value={[minValue, maxValue]}
         onChange={handleSliderChange}
         style={{ width: "272px" }}

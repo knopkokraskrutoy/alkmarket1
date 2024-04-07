@@ -21,13 +21,19 @@ const DrawerCatalog: React.FC = () => {
         Каталог
       </Button>
       <Drawer title="Basic Drawer" onClose={onClose} open={open}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <Button className={cls.drawer__btn} >
-            Вино
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <Button className={cls.drawer__btn}>
+            <h4 className={cls.drawer__btn__txt}>Вино</h4>
           </Button>
-          <Button className={cls.drawer__btn}>Шампанское</Button>
-          <Button className={cls.drawer__btn}>Коньяк</Button>
-          <Button className={cls.drawer__btn}>Виски</Button>
+          <Button className={cls.drawer__btn}>
+            <h4 className={cls.drawer__btn__txt}>Шампанское</h4>
+          </Button>
+          <Button className={cls.drawer__btn}>
+            <h4 className={cls.drawer__btn__txt}>Коньяк</h4>
+          </Button>
+          <Button className={cls.drawer__btn}>
+            <h4 className={cls.drawer__btn__txt}>Водка</h4>
+          </Button>
         </div>
       </Drawer>
     </>
