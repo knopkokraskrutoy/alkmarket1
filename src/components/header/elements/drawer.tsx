@@ -1,4 +1,4 @@
-import { Button, Drawer, Menu } from "antd"
+import { Button, Drawer } from "antd"
 import { UnorderedListOutlined } from "@ant-design/icons"
 import { useState } from "react"
 import cls from "../header.module.scss"
@@ -14,10 +14,6 @@ const DrawerCatalog: React.FC = () => {
     setOpen(false)
   }
 
-  const user = {
-    name: "Алексей",
-  }
-
   return (
     <>
       <Button onClick={showDrawer}>
@@ -26,7 +22,7 @@ const DrawerCatalog: React.FC = () => {
       </Button>
       <Drawer title="Basic Drawer" onClose={onClose} open={open}>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <Button type="primary" ghost className={cls.drawer__btn}>
+          <Button className={cls.drawer__btn} >
             Вино
           </Button>
           <Button className={cls.drawer__btn}>Шампанское</Button>

@@ -88,9 +88,23 @@
   margin-top: 10px;
   background-image: url(./elements/drawerImg/wine.jpg);
   background-size: 350px;
+  transition: all 0.4s;
 }
 
 .drawer__btn:hover {
-  background-color: #0000002f;
+  background: none !important;
+  background-image: url(./elements/drawerImg/wine.jpg) !important; 
+  transition: all 0.4s;
+}
+
+.drawer__btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.004);
+  z-index: 2;
 }
 
