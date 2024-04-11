@@ -1,6 +1,5 @@
 import { Breadcrumb, Layout, theme } from "antd"
-import ProductCardList from "./Products/ProductCardList"
-import Filter from "./search/filter"
+import Login from './form/login';
 
 const { Content } = Layout
 
@@ -25,9 +24,7 @@ const ContentComponent: React.FC = () => {
           display: "flex"
         }}
       >
-        <Filter/>
-        
-        <ProductCardList/>
+        <Login></Login>
       </div>
     </Content>
   )

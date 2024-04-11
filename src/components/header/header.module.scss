@@ -45,6 +45,10 @@
   flex-direction: column;
 }
 
+.basket_order__txt:hover {
+  color: #c5c5c5;
+}
+
 .basket_order__badge {
   display: flex;
   flex-direction: column;
@@ -60,6 +64,7 @@
 .basket_order__txt {
   color: #fff;
   margin: 0;
+  transition: 0.2s;
 }
 
 // DropDownUser //
