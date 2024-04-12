@@ -1,48 +1,50 @@
 import { DownOutlined, UserOutlined } from "@ant-design/icons"
-import type { MenuProps } from "antd"
 import { Avatar, Dropdown, Space } from "antd"
 import Link from "antd/es/typography/Link"
 import cls from "../header.module.scss"
+import { useState } from "react"
+import Login from "./login"
 
-const items: MenuProps["items"] = [
-  {
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        Настройки
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a
-        className={cls.dropdown__exit}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.aliyun.com"
-      >
-        Выйти
-      </a>
-    ),
-    key: "1",
-  },
-]
+const DropdownUser: React.FC = () => {
+  const [authorized, setAuthorized] = useState(false)
 
-const DropdownUser: React.FC = () => (
-  <Dropdown menu={{ items }} placement="bottom">
-    <Link className={cls.dropdown__link} onClick={e => e.preventDefault()}>
-      <Avatar
-        className={cls.dropdown__avatar}
-        icon={<UserOutlined />}
-      />
-      Алексей
-      <DownOutlined />
-    </Link>
-  </Dropdown>
-)
+  const handleAuthToggle = () => {
+    setAuthorized(!authorized)
+  }
+
+  const items = [
+    {
+      label: <a onClick={e => e.stopPropagation()}>Настройки</a>,
+      key: "0",
+    },
+    {
+      label: authorized ? (
+        <a
+          className={cls.dropdown__exit}
+          onClick={e => e.stopPropagation()}
+          href="#"
+        >
+          Выйти
+        </a>
+      ) : (
+          <Login/>
+      ),
+      key: "1",
+    },
+  ]
+
+  return (
+    <Dropdown menu={{ items }} placement="bottom">
+      <Link className={cls.dropdown__link} onClick={e => e.preventDefault()}>
+        {authorized && ( // Условный рендеринг Avatar
+          <Avatar className={cls.dropdown__avatar} icon={<UserOutlined />} />
+        )}
+        {authorized ? "Алексей" : "Гость"}
+        <DownOutlined />
+      </Link>
+    </Dropdown>
+  )
+}
 
 export default DropdownUser
+

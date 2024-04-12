@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Modal } from "antd"
 import { Button, Checkbox, Form, type FormProps, Input } from "antd"
+import DropdownUser from "./dropDownUser"
 
 type FieldType = {
   username?: string
@@ -23,25 +24,40 @@ const Login: React.FC = () => {
     setIsModalOpen(true)
   }
 
-  const handleOk = () => {
+  const handleOk = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setIsModalOpen(false)
+    setAuthorized(true)
+    event.stopPropagation()
   }
 
-  const handleCancel = () => {
-    setIsModalOpen(false)
+  const handleButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
+    setIsModalOpen(!isModalOpen)
+    event.stopPropagation()
   }
+
+  const [authorized, setAuthorized] = useState(false)
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      <Button type="primary" onClick={handleButtonClick}>
         Войти
       </Button>
       <Modal
-        cancelButtonProps
         title="Авторизация"
         open={isModalOpen}
         onOk={handleOk}
-        onCancel={handleCancel}
+        onCancel={handleButtonClick}
+        closeIcon={false}
+        footer={[
+          <Button key="submit" type="primary" onClick={handleButtonClick}>
+            Cancel
+          </Button>,
+          <Button key="submit" type="primary" onClick={handleOk}>
+            Submit
+          </Button>,
+        ]}
       >
         <Form
           name="basic"
@@ -60,7 +76,6 @@ const Login: React.FC = () => {
           >
             <Input />
           </Form.Item>
-
           <Form.Item<FieldType>
             label="Пароль"
             name="password"
@@ -68,19 +83,12 @@ const Login: React.FC = () => {
           >
             <Input.Password />
           </Form.Item>
-
           <Form.Item<FieldType>
             name="remember"
             valuePropName="checked"
             wrapperCol={{ offset: 8, span: 16 }}
           >
             <Checkbox>Запомнить меня</Checkbox>
-          </Form.Item>
-
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
-              Готово
-            </Button>
           </Form.Item>
         </Form>
       </Modal>
