@@ -1,50 +1,52 @@
 import { DownOutlined, UserOutlined } from "@ant-design/icons"
-import { Avatar, Dropdown, Space } from "antd"
+import { Avatar, Button, Dropdown } from "antd"
 import Link from "antd/es/typography/Link"
 import cls from "../header.module.scss"
-import { useState } from "react"
-import Login from "./login"
 
-const DropdownUser: React.FC = () => {
-  const [authorized, setAuthorized] = useState(false)
-
-  const handleAuthToggle = () => {
-    setAuthorized(!authorized)
+const DropdownUser: React.FC<{
+  setAuthorized: (value: boolean) => void;
+  isModalOpen: boolean;
+  setIsModalOpen: (value: boolean) => void;
+  authorized: boolean;
+}> = ({ setAuthorized, authorized, isModalOpen, setIsModalOpen }) => {
+  const clickLoginBtn = () => {
+    setIsModalOpen(true)
   }
 
   const items = [
     {
-      label: <a onClick={e => e.stopPropagation()}>Настройки</a>,
+      label: <Link>Настройки</Link>,
       key: "0",
     },
     {
-      label: authorized ? (
-        <a
+      label: (
+        <Link
           className={cls.dropdown__exit}
-          onClick={e => e.stopPropagation()}
-          href="#"
         >
           Выйти
-        </a>
-      ) : (
-          <Login/>
+        </Link>
       ),
       key: "1",
     },
   ]
 
   return (
-    <Dropdown menu={{ items }} placement="bottom">
-      <Link className={cls.dropdown__link} onClick={e => e.preventDefault()}>
-        {authorized && ( // Условный рендеринг Avatar
-          <Avatar className={cls.dropdown__avatar} icon={<UserOutlined />} />
-        )}
-        {authorized ? "Алексей" : "Гость"}
-        <DownOutlined />
-      </Link>
-    </Dropdown>
+    <>
+      { authorized ? (    
+          <Dropdown menu={{ items }} placement="bottom">
+            <Link className={cls.dropdown__link} onClick={e => e.preventDefault()}>
+              <Avatar className={cls.dropdown__avatar} icon={<UserOutlined />} />
+              Иван Иванов
+              <DownOutlined />
+            </Link>
+          </Dropdown>
+        )  : <Button className={cls.login__btn} onClick={clickLoginBtn}>Вход</Button>
+      }
+
+    </>
+
+
   )
 }
 
 export default DropdownUser
-

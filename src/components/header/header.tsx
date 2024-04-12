@@ -6,14 +6,17 @@ import Basket from "./elements/basket"
 import Order from "./elements/order"
 import DrawerCatalog from "./elements/drawer"
 import cls from "./header.module.scss"
+import { useState } from "react"
+import Login from "./elements/login"
 
 const { Header } = Layout
 
 const HeaderComponent: React.FC = () => {
+  const [authorized, setAuthorized] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <Header
-      className={cls.header}
-    >
+    <Header className={cls.header}>
       <div className={cls.logo}>LOGO</div>
       <div className={cls.navbar}>
         <div className={cls.catalog}>
@@ -22,12 +25,11 @@ const HeaderComponent: React.FC = () => {
         </div>
         <div className={cls.menu}>
           <Order />
-          <Basket></Basket>
-          <Link to={"/user"}>
-            <DropdownUser />
-          </Link>
+          <Basket/>
+          <DropdownUser authorized={authorized} setAuthorized={setAuthorized} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
         </div>
       </div>
+      <Login authorized={authorized} setAuthorized={setAuthorized} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </Header>
   )
 }

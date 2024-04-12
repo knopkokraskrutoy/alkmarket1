@@ -1,10 +1,11 @@
 import { Card, Button } from "antd"
 import { useState } from "react"
 import cls from "../content.module.scss"
+import type { ItemsType } from "./ProductCardList"
 
 const { Meta } = Card
 
-const ProductCard: React.FC = props => {
+const ProductCard: React.FC<{ card: ItemsType }> = ({ card }) => {
   const [inCart, setInCart] = useState(false)
 
   const handleButtonClick = (
@@ -30,8 +31,8 @@ const ProductCard: React.FC = props => {
         />
       }
     >
-      <Meta title={props.card.name} />
-      <h3 className={cls.card__price}>{props.card.price}</h3>
+      <Meta title={card.name} />
+      <h3 className={cls.card__price}>{card.price}</h3>
       <Button
         block
         className={cls.card__btn}
