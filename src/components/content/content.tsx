@@ -1,6 +1,8 @@
 import { Breadcrumb, Layout, theme } from "antd"
 import ProductCardList from "./Products/ProductCardList"
 import Filter from "./search/filter"
+import ProductPage from './Products/ProductPage';
+import OrdersPage from "./orders/OrdersPage";
 
 const { Content } = Layout
 
@@ -23,10 +25,13 @@ const ContentComponent: React.FC = () => {
           background: colorBgContainer,
           borderRadius: borderRadiusLG,
           display: "flex",
+          gap: "16px",
         }}
       >
-        <Filter />
-        <ProductCardList />
+        {/* <Filter />
+        <ProductCardList /> 
+        <ProductPage/> */}
+        <OrdersPage/>
       </div>
     </Content>
   )

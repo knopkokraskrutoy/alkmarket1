@@ -34,14 +34,14 @@ const FilterSlider: React.FC = () => {
         <InputNumber
           min={1}
           max={1000}
-          style={{ width: "124px", marginRight: "34px" }}
+          style={{ width: "70px", marginRight: "14px" }}
           value={minValue}
           onChange={handleMinChange}
         />
         <InputNumber
           min={1}
           max={1000}
-          style={{ width: "124px" }}
+          style={{ width: "70px" }}
           value={maxValue}
           onChange={handleMaxChange}
         />
@@ -54,7 +54,7 @@ const FilterSlider: React.FC = () => {
         step={10}
         value={[minValue, maxValue]}
         onChange={handleSliderChange}
-        style={{ width: "272px" }}
+        style={{ width: "144px" }}
       />
     </div>
   )

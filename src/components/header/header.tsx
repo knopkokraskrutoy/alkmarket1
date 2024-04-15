@@ -17,7 +17,7 @@ const HeaderComponent: React.FC = () => {
 
   return (
     <Header className={cls.header}>
-      <div className={cls.logo}>LOGO</div>
+      <div className={cls.logo}>Юзай БЭМ</div>
       <div className={cls.navbar}>
         <div className={cls.catalog}>
           <DrawerCatalog />

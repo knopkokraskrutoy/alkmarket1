@@ -19,8 +19,7 @@ const ProductCardList: React.FC = () => {
     { name: "Пьяный квас", price: "99999$" },
     { name: "Бруско 150мг", price: "10$" },
   ]
-  // Напиши тип для переменной items 
-
+  
   return (
     <div className={cls.card__list}>
       {
