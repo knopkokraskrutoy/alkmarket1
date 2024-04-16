@@ -3,6 +3,7 @@ import ProductCardList from "./Products/ProductCardList"
 import Filter from "./search/filter"
 import ProductPage from './Products/ProductPage';
 import OrdersPage from "./orders/OrdersPage";
+import BasketPage from "./basket/BasketPage";
 
 const { Content } = Layout
 
@@ -30,8 +31,9 @@ const ContentComponent: React.FC = () => {
       >
         {/* <Filter />
         <ProductCardList /> 
-        <ProductPage/> */}
-        <OrdersPage/>
+        <ProductPage/> 
+        <OrdersPage/> */}
+        <BasketPage/>
       </div>
     </Content>
   )

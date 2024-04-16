@@ -77,5 +77,33 @@
   display: block;
 }
 
+// BasketPage //
+
+.basket__list {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.basket__card {
+  display: flex;
+  justify-content: space-between;
+  h3{margin: 0;}
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 800px;
+  gap: 16px;
+}
+
+.basket__card__header {
+  display: flex;
+}
+
+.basket__card__price {
+  margin-top: 24px;
+  display: flex;
+  h5{margin: 0 5px 0 0; font-size: 15px;} 
+}
+
 
 
