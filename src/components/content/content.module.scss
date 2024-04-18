@@ -79,6 +79,17 @@
 
 // BasketPage //
 
+.basket {
+  display: flex;
+  gap: 16px;
+}
+
+.basket__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .basket__list {
   gap: 8px;
   display: flex;
@@ -91,8 +102,7 @@
   h3{margin: 0;}
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 800px;
-  gap: 16px;
+  width:500px;
 }
 
 .basket__card__header {
@@ -103,6 +113,12 @@
   margin-top: 24px;
   display: flex;
   h5{margin: 0 5px 0 0; font-size: 15px;} 
+}
+
+.basket__menu {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
 }
 
 

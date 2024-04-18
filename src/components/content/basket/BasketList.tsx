@@ -19,7 +19,7 @@ const BasketList: React.FC = () => {
     { name: "Кальвадос", price: 800 },
     { name: "Пиво", price: 100 },
     { name: "Пьяный квас", price: 99999 },
-    { name: "Бруско 150мг", price: 0 },
+    { name: "Бруско 150мг", price: 10 },
   ]
 
   return (

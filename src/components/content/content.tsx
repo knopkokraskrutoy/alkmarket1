@@ -5,12 +5,14 @@ import ProductPage from './Products/ProductPage';
 import OrdersPage from "./orders/OrdersPage";
 import BasketPage from "./basket/BasketPage";
 
+
 const { Content } = Layout
 
 const ContentComponent: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken()
+
 
   return (
     <Content style={{ padding: "0 48px" }}>
@@ -29,10 +31,6 @@ const ContentComponent: React.FC = () => {
           gap: "16px",
         }}
       >
-        {/* <Filter />
-        <ProductCardList /> 
-        <ProductPage/> 
-        <OrdersPage/> */}
         <BasketPage/>
       </div>
     </Content>
