@@ -1,3 +1,4 @@
+import { Tag } from "antd"
 import cls from "../content.module.scss"
 import ModalCalendar from "./ModalCalendar"
 import OrdersList from "./Order/OrdersList"
@@ -16,7 +17,7 @@ const OrdersPage : React.FC = () => {
         <div>
           <div className={cls.order__header}>
               <h3>
-                {date} {time}
+                {date} {time} <Tag>В процессе</Tag>
               </h3>
               <h3>
                 {sum}
