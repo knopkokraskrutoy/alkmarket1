@@ -1,5 +1,5 @@
 import cls from "../content.module.scss"
-import BasketList from "./BasketList"
+import BasketList, { ItemsType } from "./BasketList"
 import { Button, Checkbox, Divider } from "antd"
 import type { CheckboxProps } from "antd"
 
@@ -9,7 +9,19 @@ const onChange: CheckboxProps["onChange"] = e => {
 
 const BasketPage: React.FC = () => {
 
-  const sumOfAll = "5"
+  
+  const items: ItemsType[] = [
+    { name: "Вино", price: 1000 },
+    { name: "Коньяк", price: 500 },
+    { name: "Водка", price: 300 },
+    { name: "Самогон", price: 700 },
+    { name: "Кальвадос", price: 800 },
+    { name: "Пиво", price: 100 },
+    { name: "Пьяный квас", price: 99999 },
+    { name: "Бруско 150мг", price: 10 },
+  ]
+
+  const sumOfAll = items.reduce((acc, item) => acc + item.price, 0)
 
   return (
     <div>
@@ -21,7 +33,7 @@ const BasketPage: React.FC = () => {
             <Button danger>Удалить</Button>
           </div>
           <div>
-            <BasketList></BasketList>
+            <BasketList items={items}/>
           </div>
         </div>
 

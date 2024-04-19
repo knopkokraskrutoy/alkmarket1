@@ -31,7 +31,7 @@ const ContentComponent: React.FC = () => {
           gap: "16px",
         }}
       >
-        <OrdersPage />
+        <BasketPage/>
       </div>
     </Content>
   )
